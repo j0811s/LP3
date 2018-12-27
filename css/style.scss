@@ -60,7 +60,7 @@ a {
 }
 .pc {
     display: block;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:599px) {
         display: none;
     }
 }
@@ -126,12 +126,14 @@ a {
 }
 /* ヘッダーナビ */
 .nav {
+    overflow: hidden;
     ul {
         display: flex;
         align-items: center;
         padding-top: 80px;
         @media screen and (max-width:960px) {
             padding-top: 60px;
+            min-width: 960px;
         }
         li {
             font-size: 12px;
@@ -150,8 +152,10 @@ a {
 }
 
 /* ヒーローイメージ */
-.hero-img__pc {
+.hero-img {
     position: relative;
+}
+.hero-img__pc {
     display: block;
     @media screen and (max-width:960px) {
         display: none;
@@ -159,7 +163,13 @@ a {
 }
 .hero-img__sp {
     display: none;
-    @media screen and (max-width:960px) {
+    @media screen and (min-width:600px) and (max-width:960px) {
+        display: block;
+        height: 60vh;
+        object-fit: cover;
+        object-position: 0% 0%;
+    }
+    @media screen and (max-width:599px) {
         display: block;
         height: 100vh;
         object-fit: cover;
@@ -168,15 +178,19 @@ a {
 }
 .hero-img__box {
     position: absolute;
-    top: 35%;
-    left: 5%;
+    top: 50%;
+    transform: translate(5%,-50%);
+    width: 90%;
+    @media screen and (min-width:600px) and (max-width:960px) {
+        top: 80%;
+        transform: translate(5%,-80%);
+    }
     @media screen and (max-width:599px) {
-        top: 95%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        top: 100%;
+        transform: translate(2.5%,-100%);
         width: 95%;
     }
-    h1 {
+    h2 {
         color: #fff;
         font-size: 42px;
         font-weight: bold;
@@ -263,23 +277,30 @@ a {
     position: relative;
     width: 50%;
     overflow: hidden;
-    @media screen and (max-width:599px) {
-        width: 100%;
+    img {
+        transition: transform 2s;
     }
-    a {
-        position: absolute;
-        top: 85%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-}
-.grid__box__pc {
-    overflow: hidden;
-    transition: transform 2s;
-    &:hover {
+    &:hover img{
         transition: transform 5s;
         transform: scale(1.3);
     }
+    &:hover .grid__img-cover{
+        background-color: rgba(#000,.2);
+    } 
+    @media screen and (max-width:599px) {
+        width: 100%;
+    }
+}
+.grid__img-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    transition: background-color .5s;
+}
+.grid__box__pc {
     @media screen and (max-width:960px) {
         display: none;
     }
@@ -288,16 +309,14 @@ a {
     display: none;
     @media screen and (max-width:960px) {
         display: block;
-        overflow: hidden;
-        transition: transform 2s;
-        &:hover {
-            transition: transform 5s;
-            transform: scale(1.3);
-        }
     }
 }
 .grid__box__btn {
     @include btn;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     @media screen and (max-width:960px) {
         opacity: .6;
     }
@@ -381,14 +400,9 @@ a {
     position: relative;
 }
 .hero-img2__multi {
-    @media screen and (min-width:600px) and (max-width:960px) {
-        height: 80vh;
-        min-height: 80vh;
-        object-fit: cover;
-        object-position: 70% 0%;
-    }
-    @media screen and (max-width:599px) {
+    @media screen and (max-width:960px) {
         height: 100vh;
+        min-height: 100vh;
         object-fit: cover;
         object-position: 70% 0%;
     }
@@ -397,14 +411,10 @@ a {
     position: absolute;
     top: 36%;
     left: 5%;
-    @media screen and (min-width:600px) and (max-width:960px) {
-        top: 50%;
-    }
-    @media screen and (max-width:599px) {
-        top: 70%;
-        left: 2%;
-        transform: translate(0%,-50%);
-        width: 100%;
+    @media screen and (max-width:960px) {
+        top: 90%;
+        transform: translate(0,-90%);
+        width: 90%;
     }
     h2 {
         color: #fff;
@@ -425,18 +435,37 @@ a {
 .btn2 {
     @include btn;
     margin: 10px 0;
-    @media screen and (min-width:600px) and (max-width:960px) {
+    @media screen and (max-width:960px) {
         opacity: .6;
-    }
-    @media screen and (max-width:599px) {
-        opacity: .6;
-        width: 50%;
     }
 }
 /* グリッド状タイル */
 .grid2 {
     display: flex;
     flex-wrap: wrap;
+}
+.grid__item {
+    position: relative;
+    overflow: hidden;
+    img {
+        transition: transform 2s;
+    }
+    &:hover img{
+        transition: transform 5s;
+        transform: scale(1.3);
+    }
+    &:hover .grid2__img-cover {
+        background-color: rgba(#000,.2);
+    } 
+}
+.grid2__img-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    transition: background-color .5s;
 }
 .grid__left {
     width: 25%;
@@ -452,6 +481,7 @@ a {
 }
 .grid__right {
     width: 50%;
+    overflow: hidden;
     @media screen and (max-width:960px) {
         width: 100%;
     }
@@ -462,25 +492,31 @@ a {
 .grid__right__2row {
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 100%;
+    @media screen and (max-width:960px) {
+        width: 50%;
+    }
 }
 .grid__right__cover {
     position: absolute;
-    top: 50%;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    transform: translate(0,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: #fff;
     h2 {
-        font-size: 30px;
+        font-size: 28px;
         font-weight: bold;
         @media screen and (max-width:960px) {
             font-size: 20px;
         }
     }
-    > p {
+    p {
         margin: 8px 0;
     }
 }
