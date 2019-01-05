@@ -1,6 +1,7 @@
-@import "./common/_common";
-@import "./common/_header";
-@import "./common/_footer";
+@import "./common/_common.scss";
+@import "./common/_header.scss";
+@import "./common/_footer.scss";
+@import "./common/_plugins.scss";
 
 /* ヒーローイメージ */
 .hero-img {
@@ -8,13 +9,13 @@
 }
 .hero-img__pc {
     display: block;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         display: none;
     }
 }
 .hero-img__sp {
     display: none;
-    @media screen and (min-width:600px) and (max-width:960px) {
+    @media screen and (min-width:601px) and (max-width:959px) {
         display: block;
         height: 80vh;
         object-fit: cover;
@@ -34,7 +35,7 @@
     width: 95%;
     margin: auto;
     transform: translate(0,-50%);
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         top: 95%;
         transform: translate(0,-95%);
     }
@@ -42,13 +43,13 @@
         color: #fff;
         font-size: 42px;
         font-weight: bold;
-        @media screen and (max-width:960px) {
+        @media screen and (max-width:959px) {
             font-size: 21px;
         }
     }
     p {
         color: #fff;
-        @media screen and (max-width:960px) {
+        @media screen and (max-width:959px) {
             font-size: 14px;
         }
     }
@@ -56,7 +57,7 @@
 .btn {
     @include btn;
     margin-top: 15px;
-    @media screen and (min-width:600px) and (max-width:960px) {
+    @media screen and (min-width:601px) and (max-width:959px) {
         opacity: .6;
     }
     @media screen and (max-width:600px) {
@@ -66,13 +67,13 @@
     }
 }
 
-/* 動画 */
+/* YouTube_video */
 .video {
     position: relative;
     background-image: url(../img/lp-movie_bg_1807-min.jpg);
     background-position: 50% 50%;
     height: 450px;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         height: 550px;
     }
 }
@@ -83,13 +84,13 @@
     left: 50%;
     transform: translate(-50%,-50%);
     width: 50%;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         display: none;
     }
 }
 .video__sp {
     display: none;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         display: block;
         position: absolute;
         top: 50%;
@@ -145,7 +146,7 @@
             transform: scale(1.0);
         }
     }
-    @media screen and (min-width:600px) and (max-width:960px) {
+    @media screen and (min-width:601px) and (max-width:959px) {
         width: 50%;
         &:hover img {
             transition: none;
@@ -154,13 +155,13 @@
     }
 }
 .grid__box__pc {
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         display: none;
     }
 }
 .grid__box__sp {
     display: none;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         display: block;
     }
 }
@@ -171,28 +172,56 @@
     left: 0;
     right: 0;
     margin: auto;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         opacity: .6;
     }
 }
 
 /* スライダー */
 .slider {
-    width: 50%;
-    @media screen and (min-width:600px) and (max-width:960px) {
-        width: 60%;
+    width: 100%;
+}
+.slider__box {
+    position: relative;
+    background-image: url(../img/10.jpg);
+    height: 100vh;
+    @media screen and (min-width:601px) and (max-width:959px) {
+        height: 50vh;
     }
+}
+.thumb__box {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.thumb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
     @media screen and (max-width:600px) {
         width: 95%;
     }
 }
-.slider__bg {
-    @media screen and (max-width:600px) {
-        height: 100vh;
+.thumb__title {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    p {
+        @media screen and (max-width:959px) {
+            font-size: 12px;
+        }
     }
-}
-.slider__box {
-    position: relative;
+    h2 {
+        font-size: 24px;
+        letter-spacing: 5px;
+        @media screen and (max-width:959px) {
+            font-size: 16px;
+            letter-spacing: normal;
+        }
+    }
 }
 .slider {
     position: absolute;
@@ -202,41 +231,35 @@
 }
 .slider__item {
     color: #fff;
+    font-weight: bold;
     text-align: center;
     img {
-        margin: 50px 0;
-        @media screen and (min-width:600px) and (max-width:960px) {
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-    }
-    p {
-        font-weight: bold;
-        @media screen and (max-width:960px) {
-            font-size: 12px;
+        width: 50%;
+        margin: 100px auto;
+        @media screen and (max-width:600px) {
+            width: 95%;
         }
     }
     h2 {
         font-size: 24px;
-        font-weight: bold;
         margin-bottom: 20px;
         letter-spacing: 5px;
-        @media screen and (max-width:960px) {
+        @media screen and (max-width:959px) {
             font-size: 16px;
             margin-bottom: 10px;
             letter-spacing: normal;
         }
     }
-    .slider__btn {
-        @include btn;
-        margin: 0 auto;
-        @media screen and (min-width:600px) and (max-width:960px) {
-            opacity: .6;
-        }
-        @media screen and (max-width:600px) {
-            opacity: .6;
-            width: 90%;
-        }
+}
+.slider__btn {
+    @include btn;
+    margin: 0 auto;
+    @media screen and (min-width:601px) and (max-width:959px) {
+        opacity: .6;
+    }
+    @media screen and (max-width:600px) {
+        opacity: .6;
+        width: 90%;
     }
 }
 /* ヒーローイメージ2 */
@@ -244,7 +267,7 @@
     position: relative;
 }
 .hero-img2__multi {
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         height: 100vh;
         min-height: 100vh;
         object-fit: cover;
@@ -255,7 +278,7 @@
     position: absolute;
     top: 36%;
     left: 5%;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         top: 95%;
         transform: translate(0,-95%);
     }
@@ -263,13 +286,13 @@
         color: #fff;
         font-size: 42px;
         font-weight: bold;
-        @media screen and (max-width:960px) {
+        @media screen and (max-width:959px) {
             font-size: 21px;
         }
     }
     p {
         color: #fff;
-        @media screen and (max-width:960px) {
+        @media screen and (max-width:959px) {
             font-size: 14px;
         }
     }
@@ -278,7 +301,7 @@
     @include btn;
     margin-top: 30px;
     margin-bottom: 10px;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         opacity: .6;
         width: auto;
     }
@@ -304,13 +327,13 @@
 }
 .grid__left {
     width: 25%;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         width: 50%;
     }
 }
 .grid__center {
     width: 25%;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         width: 50%;
     }
 }
@@ -319,7 +342,7 @@
     flex-wrap: wrap;
     width: 50%;
     overflow: hidden;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         width: 100%;
     }
     .grid__item {
@@ -345,7 +368,7 @@
     h2 {
         font-size: 28px;
         font-weight: bold;
-        @media screen and (max-width:960px) {
+        @media screen and (max-width:959px) {
             font-size: 20px;
         }
     }
@@ -376,21 +399,21 @@
     > h2 {
         font-size: 28px;
         font-weight: bold;
-        @media screen and (max-width:960px) {
+        @media screen and (max-width:959px) {
             font-size: 23px;
         }
     }
     h3 {
         font-size: 18px;
         font-weight: bold;
-        @media screen and (max-width:960px) {
+        @media screen and (max-width:959px) {
             font-size: 13px;
         }
     }
     hr {
         border-top: 1px solid #EBEBEB;
     }
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         width: 100%;
         padding: 40px 0 0 0;
     }
@@ -400,7 +423,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 50px 0;
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         margin-bottom: 30px;
     }
     > li {
@@ -414,11 +437,11 @@
         > a {
             font-size: 15px;
             color: #58AFDE;
-            @media screen and (max-width:960px) {
+            @media screen and (max-width:959px) {
                 font-size: 12px;
             }
         }
-        @media screen and (max-width:960px) {
+        @media screen and (max-width:959px) {
             width: 45%;
             margin-bottom: 5px;
             &:nth-of-type(odd) {
@@ -437,7 +460,7 @@
         > a {
             font-size: 20px;
             font-weight: bold;
-            @media screen and (max-width:960px) {
+            @media screen and (max-width:959px) {
                 font-size: 12px;
             }
             > i {
@@ -445,26 +468,8 @@
             }
         }
     }
-    @media screen and (max-width:960px) {
+    @media screen and (max-width:959px) {
         margin-top: 25px;
         margin-bottom: 50px;
     }
-}
-/* フッター */
-.footer__sp {
-    display: none;
-    @media screen and (max-width:960px) {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        border-top: 1px solid #EBEBEB;
-    }
-}
-.top__btn {
-    @include footer__btn;
-}
-.login__btn {
-    @include footer__btn;
-    color: #fff;
-    background-color: #000;
 }
