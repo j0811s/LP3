@@ -32,9 +32,18 @@ a {
         display: none;
     }
 }
-/* 英文字用 */
+.br__sp--large {
+    display: block;
+    @media screen and (min-width:960px) {
+        display: none;
+    }
+}
+/* 文字サイズ */
 .eng {
     font-size: 1.1em;
+}
+.icon {
+    font-size: 2em;
 }
 /* 画像マスク */
 .mask::after {
