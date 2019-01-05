@@ -7,6 +7,7 @@ a {
     text-decoration: none;
     color: #000;
 }
+/* レスポンシブ用 */
 .pc {
     display: block;
     @media screen and (max-width:960px) {
@@ -31,9 +32,11 @@ a {
         display: none;
     }
 }
+/* 英文字用 */
 .eng {
-    font-size: 17px;
+    font-size: 1.1em;
 }
+/* 画像マスク */
 .mask::after {
     position: absolute;
     top: 0;
@@ -45,6 +48,7 @@ a {
     opacity: 0;
     transition: opacity .5s;
 }
+/* ボタン */
 @mixin btn {
     display: block;
     width: 250px;
