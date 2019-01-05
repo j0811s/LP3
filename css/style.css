@@ -51,9 +51,23 @@ a {
   }
 }
 
-/* 英文字用 */
+.br__sp--large {
+  display: block;
+}
+
+@media screen and (min-width: 960px) {
+  .br__sp--large {
+    display: none;
+  }
+}
+
+/* 文字サイズ */
 .eng {
   font-size: 1.1em;
+}
+
+.icon {
+  font-size: 2em;
 }
 
 /* 画像マスク */
@@ -177,13 +191,13 @@ a {
 
 @media screen and (min-width: 600px) and (max-width: 960px) {
   .slick-prev, .slick-next {
-    font-size: 30px;
+    font-size: 35px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .slick-prev, .slick-next {
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 
@@ -463,7 +477,7 @@ a {
 
 @media screen and (min-width: 601px) and (max-width: 959px) {
   .slider__box {
-    height: 50vh;
+    height: 80vh;
   }
 }
 
@@ -527,12 +541,19 @@ a {
 
 .slider__item img {
   width: 50%;
-  margin: 100px auto;
+  margin: 60px auto;
+}
+
+@media screen and (min-width: 601px) and (max-width: 959px) {
+  .slider__item img {
+    margin: 100px auto;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .slider__item img {
     width: 95%;
+    margin: 100px auto;
   }
 }
 
@@ -812,7 +833,8 @@ a {
 @media screen and (max-width: 959px) {
   .link {
     width: 100%;
-    padding: 40px 0 0 0;
+    padding-top: 40px;
+    padding-bottom: 0;
   }
 }
 
@@ -863,28 +885,25 @@ a {
 
 .link__sns {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
   margin-top: 50px;
   margin-bottom: 100px;
 }
 
-.link__sns > li {
-  margin: 0 20px;
-}
-
-.link__sns > li > a {
+.link__sns li a {
   font-size: 20px;
   font-weight: bold;
 }
 
 @media screen and (max-width: 959px) {
-  .link__sns > li > a {
+  .link__sns li a {
     font-size: 12px;
   }
 }
 
-.link__sns > li > a > i {
-  font-size: 26px;
+.link__sns li a i {
+  vertical-align: middle;
 }
 
 @media screen and (max-width: 959px) {
