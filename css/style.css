@@ -1,60 +1,4 @@
 @charset "UTF-8";
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  max-width: 1366px;
-  margin: 0 auto;
-  line-height: 1.5;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 /* 共通スタイル */
 img {
   display: block;
@@ -70,18 +14,8 @@ a {
   display: block;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 960px) {
   .pc {
-    display: none;
-  }
-}
-
-.pc-small {
-  display: block;
-}
-
-@media screen and (max-width: 600px) and (max-width: 960px) {
-  .pc-small {
     display: none;
   }
 }
@@ -96,18 +30,40 @@ a {
   }
 }
 
-.sp-small {
-  display: none;
+.br__pc {
+  display: block;
 }
 
-@media screen and (max-width: 599px) {
-  .sp-small {
-    display: block;
+@media screen and (max-width: 600px) {
+  .br__pc {
+    display: none;
+  }
+}
+
+.br__sp {
+  display: block;
+}
+
+@media screen and (min-width: 600px) {
+  .br__sp {
+    display: none;
   }
 }
 
 .eng {
-  font-size: 1.1em;
+  font-size: 17px;
+}
+
+.mask::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity .5s;
 }
 
 /* ヘッダー */
@@ -116,8 +72,6 @@ a {
   position: fixed;
   z-index: 10;
   height: 80px;
-  max-width: 1366px;
-  margin: 0 auto;
 }
 
 @media screen and (max-width: 960px) {
@@ -141,34 +95,32 @@ a {
 
 /* ヘッダーナビ */
 .nav {
-  overflow: hidden;
-}
-
-.nav ul {
   display: flex;
   align-items: center;
   padding-top: 80px;
 }
 
 @media screen and (max-width: 960px) {
-  .nav ul {
+  .nav {
     padding-top: 60px;
-    min-width: 960px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
 
-.nav ul li {
+.nav li {
   font-size: 12px;
   margin: 14px;
 }
 
 @media screen and (max-width: 960px) {
-  .nav ul li {
+  .nav li {
     margin-right: 0;
   }
 }
 
-.nav ul li:first-child {
+.nav li:first-child {
   font-size: 15px;
   font-weight: bold;
   padding: 0 15px;
@@ -197,16 +149,15 @@ a {
 @media screen and (min-width: 600px) and (max-width: 960px) {
   .hero-img__sp {
     display: block;
-    height: 60vh;
+    height: 80vh;
     object-fit: cover;
     object-position: 0% 0%;
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
   .hero-img__sp {
     display: block;
-    height: 100vh;
     object-fit: cover;
     object-position: 0% 0%;
   }
@@ -215,40 +166,34 @@ a {
 .hero-img__box {
   position: absolute;
   top: 50%;
-  transform: translate(5%, -50%);
-  width: 90%;
+  right: 0;
+  left: 0;
+  width: 95%;
+  margin: auto;
+  transform: translate(0, -50%);
 }
 
-@media screen and (min-width: 600px) and (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .hero-img__box {
-    top: 80%;
-    transform: translate(5%, -80%);
+    top: 95%;
+    transform: translate(0, -95%);
   }
 }
 
-@media screen and (max-width: 599px) {
-  .hero-img__box {
-    top: 100%;
-    transform: translate(2.5%, -100%);
-    width: 95%;
-  }
-}
-
-.hero-img__box h2 {
+.hero-img__box h1 {
   color: #fff;
   font-size: 42px;
   font-weight: bold;
 }
 
 @media screen and (max-width: 960px) {
-  .hero-img__box h2 {
+  .hero-img__box h1 {
     font-size: 21px;
   }
 }
 
 .hero-img__box p {
   color: #fff;
-  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 960px) {
@@ -265,7 +210,7 @@ a {
   text-align: center;
   padding: 12px;
   background-color: #fff;
-  margin: 10px 0;
+  margin-top: 15px;
 }
 
 .btn:hover {
@@ -279,10 +224,11 @@ a {
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
   .btn {
+    margin-top: 10px;
     opacity: .6;
-    width: 95%;
+    width: auto;
   }
 }
 
@@ -330,19 +276,24 @@ a {
   }
 }
 
-.video__cover {
+.video__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.video__btn > i {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.video__btn i {
   font-size: 50px;
   color: #fff;
 }
 
-.video__btn i:hover {
+.video__btn > i:hover {
   opacity: .6;
 }
 
@@ -352,7 +303,7 @@ a {
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
   .grid {
     flex-direction: column;
   }
@@ -373,24 +324,28 @@ a {
   transform: scale(1.3);
 }
 
-.grid__box:hover .grid__img-cover {
-  background-color: rgba(0, 0, 0, 0.2);
+.grid__box:hover .mask::after {
+  opacity: 1;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
   .grid__box {
     width: 100%;
   }
+  .grid__box:hover img {
+    transition: none;
+    transform: scale(1);
+  }
 }
 
-.grid__img-cover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: transparent;
-  transition: background-color .5s;
+@media screen and (min-width: 600px) and (max-width: 960px) {
+  .grid__box {
+    width: 50%;
+  }
+  .grid__box:hover img {
+    transition: none;
+    transform: scale(1);
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -418,9 +373,10 @@ a {
   padding: 12px;
   background-color: #fff;
   position: absolute;
-  top: 85%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 80%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .grid__box__btn:hover {
@@ -445,13 +401,13 @@ a {
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
   .slider {
     width: 95%;
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
   .slider__bg {
     height: 100vh;
   }
@@ -470,6 +426,7 @@ a {
 
 .slider__item {
   color: #fff;
+  text-align: center;
 }
 
 .slider__item img {
@@ -478,45 +435,30 @@ a {
 
 @media screen and (min-width: 600px) and (max-width: 960px) {
   .slider__item img {
-    margin: 0 0 15px 0;
+    margin-top: 0;
+    margin-bottom: 15px;
   }
 }
 
-.slider__item span {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.slider__item p {
+  font-weight: bold;
 }
 
 @media screen and (max-width: 960px) {
-  .slider__item span {
+  .slider__item p {
     font-size: 12px;
   }
 }
 
-.slider__item span:nth-of-type(2) {
-  font-size: 1.6em;
-  font-weight: bold;
-}
-
-@media screen and (max-width: 960px) {
-  .slider__item span:nth-of-type(2) {
-    font-size: 1.2em;
-    font-weight: normal;
-  }
-}
-
-.slider__item h3 {
+.slider__item h2 {
   font-size: 24px;
   font-weight: bold;
-  text-align: center;
   margin-bottom: 20px;
   letter-spacing: 5px;
 }
 
 @media screen and (max-width: 960px) {
-  .slider__item h3 {
+  .slider__item h2 {
     font-size: 16px;
     margin-bottom: 10px;
     letter-spacing: normal;
@@ -545,7 +487,7 @@ a {
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
   .slider__item .slider__btn {
     opacity: .6;
     width: 90%;
@@ -574,9 +516,8 @@ a {
 
 @media screen and (max-width: 960px) {
   .hero-img__box2 {
-    top: 90%;
-    transform: translate(0, -90%);
-    width: 90%;
+    top: 95%;
+    transform: translate(0, -95%);
   }
 }
 
@@ -594,7 +535,6 @@ a {
 
 .hero-img__box2 p {
   color: #fff;
-  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 960px) {
@@ -611,7 +551,8 @@ a {
   text-align: center;
   padding: 12px;
   background-color: #fff;
-  margin: 10px 0;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .btn2:hover {
@@ -622,6 +563,7 @@ a {
 @media screen and (max-width: 960px) {
   .btn2 {
     opacity: .6;
+    width: auto;
   }
 }
 
@@ -645,18 +587,8 @@ a {
   transform: scale(1.3);
 }
 
-.grid__item:hover .grid2__img-cover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.grid2__img-cover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: transparent;
-  transition: background-color .5s;
+.grid__item:hover .mask::after {
+  opacity: 1;
 }
 
 .grid__left {
@@ -680,6 +612,8 @@ a {
 }
 
 .grid__right {
+  display: flex;
+  flex-wrap: wrap;
   width: 50%;
   overflow: hidden;
 }
@@ -690,20 +624,13 @@ a {
   }
 }
 
+.grid__right .grid__item {
+  width: 50%;
+}
+
 .grid__right__1row {
   position: relative;
-}
-
-.grid__right__2row {
-  display: flex;
-  align-items: center;
   width: 100%;
-}
-
-@media screen and (max-width: 960px) {
-  .grid__right__2row {
-    width: 50%;
-  }
 }
 
 .grid__right__cover {
@@ -733,6 +660,11 @@ a {
 
 .grid__right__cover p {
   margin: 8px 0;
+}
+
+.size {
+  width: 50%;
+  height: 50%;
 }
 
 .grid__btn {
@@ -808,7 +740,7 @@ a {
 
 @media screen and (max-width: 960px) {
   .link__shop {
-    margin: 50px 0 30px 0;
+    margin-bottom: 30px;
   }
 }
 
@@ -847,7 +779,8 @@ a {
 .link__sns {
   display: flex;
   justify-content: center;
-  margin: 50px 0 100px 0;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 .link__sns > li {
@@ -870,14 +803,9 @@ a {
 }
 
 @media screen and (max-width: 960px) {
-  .link__sns > li {
-    margin: 0 40px;
-  }
-}
-
-@media screen and (max-width: 960px) {
   .link__sns {
-    margin: 25px 0 50px 0;
+    margin-top: 25px;
+    margin-bottom: 50px;
   }
 }
 
@@ -898,13 +826,13 @@ a {
 .top__btn {
   display: block;
   font-size: 14px;
-  line-height: 3;
+  padding: 15px 0;
 }
 
 .login__btn {
   display: block;
   font-size: 14px;
-  line-height: 3;
+  padding: 15px 0;
   color: #fff;
   background-color: #000;
 }

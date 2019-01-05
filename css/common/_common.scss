@@ -1,0 +1,65 @@
+/* 共通スタイル */
+img {
+    display: block;
+    width: 100%;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.pc {
+    display: block;
+    @media screen and (max-width:960px) {
+        display: none;
+    }
+}
+.sp {
+    display: none;
+    @media screen and (max-width:960px) {
+        display: block;
+    }
+}
+.br__pc {
+    display: block;
+    @media screen and (max-width:600px) {
+        display: none;
+    }
+}
+.br__sp {
+    display: block;
+    @media screen and (min-width:600px) {
+        display: none;
+    }
+}
+.eng {
+    font-size: 17px;
+}
+.mask::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    background-color: rgba(#000,.2);
+    opacity: 0;
+    transition: opacity .5s;
+}
+@mixin btn {
+    display: block;
+    width: 250px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    background-color: #fff;
+    &:hover {
+        color: #fff;
+        background-color: #000;
+    }
+}
+@mixin footer__btn {
+    display: block;
+    font-size: 14px;
+    padding: 15px 0;
+}
