@@ -66,22 +66,25 @@
 
   <!-- slider -->
   <div class="slider__box">
-    <img class="slider__bg" src="./img/10.jpg" alt="adidas tennis">
-    <div class="slider">
-      <div class="slider__item">
+    <div class="thumb thumb__box">
+      <div class="thumb__title">
         <p>ADIZERO WOMEN</p>
         <h2>SPEED AND COMFORD</h2>
+      </div>
+      <div class="thumb__title">
+        <p>ADIZERO WOMEN</p>
+        <h2>SPEED AND COMFORD</h2>
+      </div>
+    </div>
+    
+    <div class="slick slider">
+      <div class="slider__item">
         <img src="./img/11.png" alt="adidas tennis shoes">
-
         <h2>Adizero Ubersonic 3.0</h2>
         <a class="slider__btn" href="https://shop.adidas.jp/products/AH2136/">商品を見る <i class="fas fa-chevron-circle-right"></i></a>
       </div>
-
       <div class="slider__item">
-        <p>ADIZERO WOMEN</p>
-        <h2>SPEED AND COMFORD</h2>
         <img src="./img/12.png" alt="adidas tennis shoes">
-
         <h2>Barricade BOOST 2018</h2>
         <a class="slider__btn" href="https://shop.adidas.jp/item/?gendId=m&cat2Id=barricade&condition=6&order=1">コレクションを見る <i class="fas fa-chevron-circle-right"></i></a>
       </div>
@@ -175,15 +178,23 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha256-P93G0oq6PBPWTP1IR8Mz/0jHHUpaWL0aBJTKauisG7Q=" crossorigin="anonymous"></script>
-  <script>
-    $('.slider').slick({
+  <script type="text/javascript">
+    //slick-carousel
+    $('.thumb').slick({
+      infinite: false,
+      asNavFor: '.slick',
+      prevArrow: '<i class="slick-prev fas fa-chevron-circle-left"></i>',
+      nextArrow: '<i class="slick-next fas fa-chevron-circle-right"></i>',
+    });
+    $('.slick').slick({
       arrows: false,
       infinite: false,
+      asNavFor: '.thumb',
     });
-
+    //magnific-popup
     $('.popup-iframe').magnificPopup({
     type: 'iframe',
-  });
+    });
   </script>
 </body>
 </html>
