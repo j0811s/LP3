@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/j0811s/LP3#readme",
   "devDependencies": {
+    "autoprefixer": "^9.4.4",
     "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2"
   }
 }
