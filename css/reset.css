@@ -30,6 +30,12 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1.5;
+	/*
+	width: 100%;
+	min-width: 960px;
+	max-width: 1366px;
+	margin: 0 auto;
+	*/
 }
 ol, ul {
 	list-style: none;
