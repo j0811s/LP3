@@ -115,8 +115,10 @@
         transform: translate(-50%,-50%);
         font-size: 50px;
         color: #fff;
-        &:hover {
-            opacity: .6;
+        @media screen and (min-width:960px) {
+            &:hover {
+                opacity: .6;
+            }   
         }
     }
 }
@@ -275,7 +277,10 @@
 .hero-img__box2 {
     position: absolute;
     top: 36%;
-    left: 5%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 95%;
     @media screen and (max-width:959px) {
         top: 95%;
         transform: translate(0,-95%);
@@ -297,9 +302,11 @@
 }
 .btn2 {
     @include btn;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    @media screen and (max-width:959px) {
+    margin-top: 15px;
+    @media screen and (min-width:601px) and (max-width:959px) {
+        opacity: .6;
+    }
+    @media screen and (max-width:600px) {
         opacity: .6;
         width: auto;
     }
@@ -370,9 +377,6 @@
             font-size: 20px;
         }
     }
-    p {
-        margin: 8px 0;
-    }
 }
 .size {
     width: 50%;
@@ -383,9 +387,12 @@
     color: #fff;
     background-color: #000;
     margin: 0 auto;
-    &:hover {
-        color: #000;
-        background-color: #fff;
+    margin-top: 10px;
+    @media screen and (min-width:960px) {
+        &:hover {
+            color: #000;
+            background-color: #fff;
+        }
     }
 }
 /* アディダス リンク */
@@ -452,13 +459,18 @@
 .link__sns {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 50px;
     margin-bottom: 100px;
     li {
+        margin-left: 50px;
+        &:first-child {
+            margin-left: 0;
+        }
         a {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
+            letter-spacing: 1px;
             @media screen and (max-width:959px) {
                 font-size: 12px;
             }
