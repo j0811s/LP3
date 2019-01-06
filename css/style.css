@@ -291,9 +291,11 @@ a {
   margin-top: 15px;
 }
 
-.btn:hover {
-  color: #fff;
-  background-color: #000;
+@media screen and (min-width: 960px) {
+  .btn:hover {
+    color: #fff;
+    background-color: #000;
+  }
 }
 
 @media screen and (min-width: 601px) and (max-width: 959px) {
@@ -377,8 +379,10 @@ a {
   color: #fff;
 }
 
-.video__btn i:hover {
-  opacity: .6;
+@media screen and (min-width: 960px) {
+  .video__btn i:hover {
+    opacity: .6;
+  }
 }
 
 /* メンズ・レディース　コレクション */
@@ -463,9 +467,11 @@ a {
   margin: auto;
 }
 
-.grid__box__btn:hover {
-  color: #fff;
-  background-color: #000;
+@media screen and (min-width: 960px) {
+  .grid__box__btn:hover {
+    color: #fff;
+    background-color: #000;
+  }
 }
 
 @media screen and (max-width: 959px) {
@@ -578,9 +584,11 @@ a {
   margin: 0 auto;
 }
 
-.slider__btn:hover {
-  color: #fff;
-  background-color: #000;
+@media screen and (min-width: 960px) {
+  .slider__btn:hover {
+    color: #fff;
+    background-color: #000;
+  }
 }
 
 @media screen and (min-width: 601px) and (max-width: 959px) {
@@ -613,7 +621,10 @@ a {
 .hero-img__box2 {
   position: absolute;
   top: 36%;
-  left: 5%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 95%;
 }
 
 @media screen and (max-width: 959px) {
@@ -653,16 +664,23 @@ a {
   text-align: center;
   padding: 12px;
   background-color: #fff;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  margin-top: 15px;
 }
 
-.btn2:hover {
-  color: #fff;
-  background-color: #000;
+@media screen and (min-width: 960px) {
+  .btn2:hover {
+    color: #fff;
+    background-color: #000;
+  }
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (min-width: 601px) and (max-width: 959px) {
+  .btn2 {
+    opacity: .6;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .btn2 {
     opacity: .6;
     width: auto;
@@ -760,10 +778,6 @@ a {
   }
 }
 
-.grid__right__cover p {
-  margin: 8px 0;
-}
-
 .size {
   width: 50%;
   height: 50%;
@@ -780,16 +794,21 @@ a {
   color: #fff;
   background-color: #000;
   margin: 0 auto;
+  margin-top: 10px;
 }
 
-.grid__btn:hover {
-  color: #fff;
-  background-color: #000;
+@media screen and (min-width: 960px) {
+  .grid__btn:hover {
+    color: #fff;
+    background-color: #000;
+  }
 }
 
-.grid__btn:hover {
-  color: #000;
-  background-color: #fff;
+@media screen and (min-width: 960px) {
+  .grid__btn:hover {
+    color: #000;
+    background-color: #fff;
+  }
 }
 
 /* アディダス リンク */
@@ -882,14 +901,23 @@ a {
 .link__sns {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 50px;
   margin-bottom: 100px;
 }
 
+.link__sns li {
+  margin-left: 50px;
+}
+
+.link__sns li:first-child {
+  margin-left: 0;
+}
+
 .link__sns li a {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 @media screen and (max-width: 959px) {
